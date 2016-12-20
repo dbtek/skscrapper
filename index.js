@@ -61,8 +61,7 @@ if (type) {
       console.log(chalk.yellow(`Bad option: ${process.argv[2]}`))
       process.exit(1)
   }
-}
-else {
+} else {
   // If no argument passed determine what menu to be shown by time
   const h = new Date().getHours()
   if (h >= 14) {
