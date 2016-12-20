@@ -1,0 +1,36 @@
+{
+  "name": "skscrapper",
+  "version": "1.0.0",
+  "description": "A lightweight cli scrapper for meal menu page of Istanbul Technical University",
+  "main": "index.js",
+  "bin": {
+    "sks": "./index.js"
+  },
+  "dependencies": {
+    "chalk": "^1.1.3",
+    "cheerio": "^0.22.0",
+    "request": "^2.79.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "standard"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dbtek/skscrapper.git"
+  },
+  "keywords": [
+    "itü",
+    "scrapper",
+    "sks",
+    "meal",
+    "menu",
+    "yemekhane"
+  ],
+  "author": "İsmail Demirbilek <ce.demirbilek@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dbtek/skscrapper/issues"
+  },
+  "homepage": "https://github.com/dbtek/skscrapper#readme"
+}
