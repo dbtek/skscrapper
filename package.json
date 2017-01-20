@@ -1,6 +1,6 @@
 {
   "name": "skscrapper",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A lightweight cli scrapper for meal menu page of Istanbul Technical University",
   "main": "index.js",
   "bin": {
