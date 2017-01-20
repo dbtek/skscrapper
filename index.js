@@ -4,14 +4,14 @@
 const cheerio = require('cheerio')
 const request = require('request')
 const chalk = require('chalk')
-const sksUrl = 'http://sks.itu.edu.tr'
+const sksUrl = 'http://sks.itu.edu.tr/ExternalPages/sks/yemek-menu/yemek-menu.aspx'
 
 /**
  * Scraps main page and extracts menu content from given wrapper
  * @param  {String}   wrapper  Wrapper element
  * @param  {Function} callback Called when request is completed
  */
-const menu = (wrapper, callback) => {
+const menu = (index, callback) => {
   request(sksUrl, (err, resp, html) => {
     if (err) {
       console.log(chalk.underline.red(err))
@@ -19,13 +19,13 @@ const menu = (wrapper, callback) => {
     }
     const $ = cheerio.load(html)
     callback()
-    $(`${wrapper} li`)
-      .each((i, li) => console.log('  · ' + $(li).text()))
+    $($(`tbody`)[index]).children('tr')
+      .each((i, tr) => console.log(`· ${chalk.underline.yellow($(tr).children('th').text())}\n  ${$(tr).children('td').text()}`))
   })
 }
 
-const lunch = () => menu('.ogle-yemegi', () => console.log(chalk.underline.blue('Öğle Yemeği Menüsü')))
-const dinner = () => menu('.aksam-yemegi', () => console.log(chalk.underline.blue('Akşam Yemeği Menüsü')))
+const lunch = () => menu(0, () => console.log(chalk.underline.blue('Öğle Yemeği Menüsü')))
+const dinner = () => menu(1, () => console.log(chalk.underline.blue('Akşam Yemeği Menüsü')))
 
 // try to determine menu from cli argument
 let type = process.argv[2]
