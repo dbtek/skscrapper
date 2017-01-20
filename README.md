@@ -4,7 +4,7 @@ skscrapper
 A lightweight cli scrapper for meal [menu page](http://sks.itu.edu.tr) of Istanbul Technical University.
 
 ### Install
-Node versions 4.3.2+ is supported due to some of ES6 features used.
+Node versions 4.3.2+ is required due to some of ES6 features used.
 ```
  $ npm install --global skscrapper
 ```
